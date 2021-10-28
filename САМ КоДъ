@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class AyI {
+    public static void main(String[] args) {
+        Scanner nu = new Scanner(System.in);
+        String hy = nu.next();
+        char[] da = hy.toCharArray();
+        int sw = 0;
+        int kdg = 0;
+        /* for(int r = 0; r < da.length(); r += 1) {
+            da[r] = hy.charAt(r);
+        } */
+        System.out.print("---------\n| " + da[0] + " " + da[1] + " " + da[2] + " |\n");
+        System.out.print("| " + da[3] + " " + da[4] + " " + da[5] + " |\n");
+        System.out.print("| " + da[6] + " " + da[7] + " " + da[8] + " |\n---------");
+        for(int op = 0; op < da.length; op += 1) {
+            if(da[0] == da[1] == da[2] == 'X' || da[3] == da[4] == da[5] == 'X' || da[6] == da[7] == da[8] == 'X' || da[0] == da[3] == da[6] == 'X' || da[1] == da[4] == da[7] == 'X' || da[2] == da[5] == da[8] == 'X' || da[2] == da[4] == da[6] == 'X' || da[0] == da[4] == da[8] == 'X') {
+                    System.out.println("X wins");
+                    break;
+                } else if(da[0] == da[1] == da[2] == 'O' || da[3] == da[4] == da[5] == 'O' || da[6] == da[7] == da[8] == 'O' || da[0] == da[3] == da[6] == 'O' || da[1] == da[4] == da[7] == 'O' || da[2] == da[5] == da[8] == 'O' || da[2] == da[4] == da[6] == 'O' || da[0] == da[4] == da[8] == 'O') {
+                    System.out.println("O wins");
+                    break;
+                } else {
+                    System.out.println("Draw"); 
+                    break;
+                } 
+            if(da[op] == '_') {
+                System.out.println("Game not finished");
+                break;
+            }
+            if(da[op] == 'X') {
+                sw += 1;
+            }
+            if(da[op] == 'O') {
+                kdg += 1;
+            }
+            if(sw - kdg >= 2 || kdg - sw >= 2) {
+                System.out.println("Impossible");
+                break;
+            }
+        }
+    }
+}
